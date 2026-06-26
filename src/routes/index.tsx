@@ -15,6 +15,9 @@ import {
   BookOpenCheck,
 } from "lucide-react";
 
+import LogoImage from "../assets/logo.png";
+import LogoWhatsApp from "../assets/logo-1.png";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -39,8 +42,15 @@ const WHATSAPP_URL =
   "https://wa.me/5511999999999?text=" +
   encodeURIComponent("Olá! Quero contratar o Assessor do RH.");
 
-function Logo({ className = "h-10" }: { className?: string }) {
-  return <img src={logoAsset.url} alt="Assessor do RH" className={className} />;
+function Logo({ className = "" }: { className?: string }) {
+  return (
+    <img
+      src={LogoImage}
+      style={{ width: "180px", height: "50px", objectFit: "cover" }}
+      alt="Assessor do RH"
+      className={className}
+    />
+  );
 }
 
 function Index() {
@@ -170,8 +180,13 @@ function PhoneMockup() {
       <div className="relative rounded-[2.25rem] border border-border bg-card p-3 shadow-brand">
         <div className="rounded-[1.75rem] bg-[#0b141a] p-4">
           <div className="flex items-center gap-3 border-b border-white/10 pb-3">
-            <div className="grid h-10 w-10 place-items-center rounded-full bg-brand-navy">
-              <img src={logoAsset.url} alt="" className="h-7 w-7 object-contain" />
+            <div className="grid h-10 w-10 place-items-center rounded-full bg-white">
+              <img
+                src={LogoWhatsApp}
+                alt=""
+                style={{ width: "200px" }}
+                className="h-10 w-10 object-contain"
+              />
             </div>
             <div>
               <p className="text-sm font-semibold text-white">Assessor do RH</p>
@@ -433,14 +448,14 @@ const PLANS = [
   {
     name: "Individual",
     cnpjs: 1,
-    price: 97,
+    price: "39,90",
     desc: "Ideal para o profissional autônomo ou empresa única.",
     highlight: false,
   },
   {
     name: "Combo 3 CNPJs",
     cnpjs: 3,
-    price: 247,
+    price: "99,90",
     desc: "Para escritórios em crescimento.",
     highlight: true,
     save: "Economize R$ 44/mês",
@@ -448,7 +463,7 @@ const PLANS = [
   {
     name: "Combo 5 CNPJs",
     cnpjs: 5,
-    price: 397,
+    price: "149,90",
     desc: "O queridinho das contabilidades.",
     highlight: false,
     save: "Economize R$ 88/mês",
@@ -456,7 +471,7 @@ const PLANS = [
   {
     name: "Combo 10 CNPJs",
     cnpjs: 10,
-    price: 697,
+    price: "299,90",
     desc: "Máxima escala para grandes carteiras.",
     highlight: false,
     save: "Economize R$ 273/mês",
