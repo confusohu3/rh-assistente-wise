@@ -544,13 +544,13 @@ function Pricing() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noreferrer"
-              className={`mt-8 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition ${
+              className={`mt-8 inline-flex items-center justify-center rounded-full px-5 py-3 text-lg font-semibold transition ${
                 p.highlight
                   ? "bg-accent-gradient text-white shadow-brand hover:opacity-90"
                   : "bg-brand-navy text-primary-foreground hover:opacity-90"
               }`}
             >
-              Assinar {p.name}
+              Assinar Plano
             </a>
           </div>
         ))}
