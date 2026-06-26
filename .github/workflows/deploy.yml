@@ -1,0 +1,39 @@
+name: Deploy Frontend
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  web-deploy:
+    name: Build e Deploy FTP
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Instalar dependências e Gerar Build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Sincronizar via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          security: loose
+          local-dir: ./dist/
+          server-dir: ./      
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
