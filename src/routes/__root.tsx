@@ -78,16 +78,42 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Assessor do RH — IA para DP e Folha de Pagamento no WhatsApp" },
-      { name: "description", content: "IA especialista em Departamento Pessoal e folha de pagamento, direto no seu WhatsApp. Tire dúvidas trabalhistas, confira cálculos e ganhe tempo." },
+      {
+        name: "description",
+        content:
+          "IA especialista em Departamento Pessoal e folha de pagamento, direto no seu WhatsApp. Tire dúvidas trabalhistas, confira cálculos e ganhe tempo.",
+      },
       { name: "author", content: "Assessor do RH" },
-      { property: "og:title", content: "Assessor do RH — IA para DP e Folha de Pagamento no WhatsApp" },
-      { property: "og:description", content: "IA especialista em Departamento Pessoal e folha de pagamento, direto no seu WhatsApp. Tire dúvidas trabalhistas, confira cálculos e ganhe tempo." },
+      {
+        property: "og:title",
+        content: "Assessor do RH — IA para DP e Folha de Pagamento no WhatsApp",
+      },
+      {
+        property: "og:description",
+        content:
+          "IA especialista em Departamento Pessoal e folha de pagamento, direto no seu WhatsApp. Tire dúvidas trabalhistas, confira cálculos e ganhe tempo.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:title", content: "Assessor do RH — IA para DP e Folha de Pagamento no WhatsApp" },
-      { name: "twitter:description", content: "IA especialista em Departamento Pessoal e folha de pagamento, direto no seu WhatsApp. Tire dúvidas trabalhistas, confira cálculos e ganhe tempo." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4fe9aebe-7645-4da5-b087-fb61bdd84668/id-preview-51537801--734087a0-ad05-4a90-9e07-e46819acc7cb.lovable.app-1782459534075.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4fe9aebe-7645-4da5-b087-fb61bdd84668/id-preview-51537801--734087a0-ad05-4a90-9e07-e46819acc7cb.lovable.app-1782459534075.png" },
+      {
+        name: "twitter:title",
+        content: "Assessor do RH — IA para DP e Folha de Pagamento no WhatsApp",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "IA especialista em Departamento Pessoal e folha de pagamento, direto no seu WhatsApp. Tire dúvidas trabalhistas, confira cálculos e ganhe tempo.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4fe9aebe-7645-4da5-b087-fb61bdd84668/id-preview-51537801--734087a0-ad05-4a90-9e07-e46819acc7cb.lovable.app-1782459534075.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4fe9aebe-7645-4da5-b087-fb61bdd84668/id-preview-51537801--734087a0-ad05-4a90-9e07-e46819acc7cb.lovable.app-1782459534075.png",
+      },
     ],
     links: [
       {

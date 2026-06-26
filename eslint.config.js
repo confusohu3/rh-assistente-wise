@@ -36,5 +36,17 @@ export default tseslint.config(
       "@typescript-eslint/no-unused-vars": "off",
     },
   },
+  // 1. Mantém as configurações padrão do plugin do Prettier
   eslintPluginPrettier,
+  // 2. Sobrescreve a regra específica para ignorar as quebras de linha do Windows
+  {
+    rules: {
+      "prettier/prettier": [
+        "error",
+        {
+          endOfLine: "auto",
+        },
+      ],
+    },
+  },
 );

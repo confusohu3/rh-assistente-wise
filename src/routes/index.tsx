@@ -19,15 +19,25 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Assessor do RH — IA de DP e Folha no WhatsApp" },
-      { name: "description", content: "Consultas ilimitadas de Departamento Pessoal, folha e legislação trabalhista diretamente no WhatsApp. Planos a partir de R$ 97/mês." },
+      {
+        name: "description",
+        content:
+          "Consultas ilimitadas de Departamento Pessoal, folha e legislação trabalhista diretamente no WhatsApp. Planos a partir de R$ 97/mês.",
+      },
       { property: "og:title", content: "Assessor do RH — IA para gestão de pessoas" },
-      { property: "og:description", content: "IA especialista em DP, folha e eSocial no seu WhatsApp. Para contabilidades e profissionais de RH." },
+      {
+        property: "og:description",
+        content:
+          "IA especialista em DP, folha e eSocial no seu WhatsApp. Para contabilidades e profissionais de RH.",
+      },
     ],
   }),
   component: Index,
 });
 
-const WHATSAPP_URL = "https://wa.me/5511999999999?text=" + encodeURIComponent("Olá! Quero contratar o Assessor do RH.");
+const WHATSAPP_URL =
+  "https://wa.me/5511999999999?text=" +
+  encodeURIComponent("Olá! Quero contratar o Assessor do RH.");
 
 function Logo({ className = "h-10" }: { className?: string }) {
   return <img src={logoAsset.url} alt="Assessor do RH" className={className} />;
@@ -57,10 +67,18 @@ function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Logo className="h-9" />
         <nav className="hidden items-center gap-8 text-sm font-medium text-muted-foreground md:flex">
-          <a href="#como-funciona" className="hover:text-brand-navy transition">Como funciona</a>
-          <a href="#recursos" className="hover:text-brand-navy transition">Recursos</a>
-          <a href="#planos" className="hover:text-brand-navy transition">Planos</a>
-          <a href="#faq" className="hover:text-brand-navy transition">FAQ</a>
+          <a href="#como-funciona" className="hover:text-brand-navy transition">
+            Como funciona
+          </a>
+          <a href="#recursos" className="hover:text-brand-navy transition">
+            Recursos
+          </a>
+          <a href="#planos" className="hover:text-brand-navy transition">
+            Planos
+          </a>
+          <a href="#faq" className="hover:text-brand-navy transition">
+            FAQ
+          </a>
         </nav>
         <a
           href="#planos"
@@ -77,8 +95,14 @@ function Hero() {
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 bg-hero opacity-[0.04]" aria-hidden />
-      <div className="absolute -right-32 top-10 h-96 w-96 rounded-full bg-accent-gradient opacity-20 blur-3xl" aria-hidden />
-      <div className="absolute -left-32 bottom-0 h-96 w-96 rounded-full bg-accent-gradient opacity-15 blur-3xl" aria-hidden />
+      <div
+        className="absolute -right-32 top-10 h-96 w-96 rounded-full bg-accent-gradient opacity-20 blur-3xl"
+        aria-hidden
+      />
+      <div
+        className="absolute -left-32 bottom-0 h-96 w-96 rounded-full bg-accent-gradient opacity-15 blur-3xl"
+        aria-hidden
+      />
 
       <div className="relative mx-auto grid max-w-6xl gap-12 px-6 pt-16 pb-24 md:grid-cols-2 md:gap-10 md:pt-24 md:pb-32">
         <div>
@@ -88,10 +112,12 @@ function Hero() {
           </span>
 
           <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] text-brand-navy md:text-6xl">
-            A IA que <span className="text-brand-blue">responde dúvidas de DP</span> direto no seu WhatsApp.
+            A IA que <span className="text-brand-blue">responde dúvidas de DP</span> direto no seu
+            WhatsApp.
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-            Consultas ilimitadas sobre folha de pagamento, eSocial, férias, rescisões e legislação trabalhista — em segundos, sem sair da conversa que você já usa todos os dias.
+            Consultas ilimitadas sobre folha de pagamento, eSocial, férias, rescisões e legislação
+            trabalhista — em segundos, sem sair da conversa que você já usa todos os dias.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -137,7 +163,10 @@ function Hero() {
 function PhoneMockup() {
   return (
     <div className="relative mx-auto w-full max-w-sm">
-      <div className="absolute -inset-6 rounded-[3rem] bg-accent-gradient opacity-30 blur-2xl" aria-hidden />
+      <div
+        className="absolute -inset-6 rounded-[3rem] bg-accent-gradient opacity-30 blur-2xl"
+        aria-hidden
+      />
       <div className="relative rounded-[2.25rem] border border-border bg-card p-3 shadow-brand">
         <div className="rounded-[1.75rem] bg-[#0b141a] p-4">
           <div className="flex items-center gap-3 border-b border-white/10 pb-3">
@@ -154,11 +183,14 @@ function PhoneMockup() {
               Funcionário pediu demissão sem cumprir aviso prévio. Posso descontar?
             </ChatBubble>
             <ChatBubble side="left">
-              Sim. O empregador pode descontar o valor equivalente aos dias de aviso prévio não trabalhados, conforme art. 487, §2º da CLT. Quer que eu calcule o desconto para o salário desse colaborador?
+              Sim. O empregador pode descontar o valor equivalente aos dias de aviso prévio não
+              trabalhados, conforme art. 487, §2º da CLT. Quer que eu calcule o desconto para o
+              salário desse colaborador?
             </ChatBubble>
             <ChatBubble side="right">Sim, salário de R$ 3.200.</ChatBubble>
             <ChatBubble side="left">
-              Desconto de aviso prévio (30 dias): <b>R$ 3.200,00</b>. Posso gerar o passo a passo para lançar no eSocial?
+              Desconto de aviso prévio (30 dias): <b>R$ 3.200,00</b>. Posso gerar o passo a passo
+              para lançar no eSocial?
             </ChatBubble>
           </div>
         </div>
@@ -200,16 +232,31 @@ function SocialProof() {
 
 function Problem() {
   const items = [
-    { icon: Clock, t: "Tempo perdido em pesquisa", d: "Horas procurando na CLT, NRs e instruções normativas para uma única dúvida." },
-    { icon: Calculator, t: "Cálculos com risco", d: "Rescisões, férias e horas extras conferidas no papel — e qualquer erro vira passivo." },
-    { icon: Scale, t: "Legislação que muda toda hora", d: "Convenções, eSocial e jurisprudência mudam constantemente. Ficar atualizado é exaustivo." },
+    {
+      icon: Clock,
+      t: "Tempo perdido em pesquisa",
+      d: "Horas procurando na CLT, NRs e instruções normativas para uma única dúvida.",
+    },
+    {
+      icon: Calculator,
+      t: "Cálculos com risco",
+      d: "Rescisões, férias e horas extras conferidas no papel — e qualquer erro vira passivo.",
+    },
+    {
+      icon: Scale,
+      t: "Legislação que muda toda hora",
+      d: "Convenções, eSocial e jurisprudência mudam constantemente. Ficar atualizado é exaustivo.",
+    },
   ];
   return (
     <section className="mx-auto max-w-6xl px-6 py-24">
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-bold text-brand-navy md:text-4xl">A rotina de DP não pode mais funcionar assim</h2>
+        <h2 className="text-3xl font-bold text-brand-navy md:text-4xl">
+          A rotina de DP não pode mais funcionar assim
+        </h2>
         <p className="mt-4 text-muted-foreground">
-          Você lida com várias empresas, prazos apertados e um Whatsapp lotado de dúvidas. Cada minuto vale dinheiro — e cada erro também.
+          Você lida com várias empresas, prazos apertados e um Whatsapp lotado de dúvidas. Cada
+          minuto vale dinheiro — e cada erro também.
         </p>
       </div>
       <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -229,20 +276,39 @@ function Problem() {
 
 function HowItWorks() {
   const steps = [
-    { n: "01", t: "Assine seu plano", d: "Escolha o pacote pelo número de CNPJs que você atende e finalize a assinatura mensal." },
-    { n: "02", t: "Cadastre seus CNPJs", d: "Em poucos minutos, ativamos seu acesso e cadastramos as empresas que serão atendidas." },
-    { n: "03", t: "Fale no WhatsApp", d: "Mande sua dúvida, anexe o demonstrativo, peça o cálculo. A IA responde em segundos." },
+    {
+      n: "01",
+      t: "Assine seu plano",
+      d: "Escolha o pacote pelo número de CNPJs que você atende e finalize a assinatura mensal.",
+    },
+    {
+      n: "02",
+      t: "Cadastre seus CNPJs",
+      d: "Em poucos minutos, ativamos seu acesso e cadastramos as empresas que serão atendidas.",
+    },
+    {
+      n: "03",
+      t: "Fale no WhatsApp",
+      d: "Mande sua dúvida, anexe o demonstrativo, peça o cálculo. A IA responde em segundos.",
+    },
   ];
   return (
     <section id="como-funciona" className="bg-secondary/50 py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue">Como funciona</span>
-          <h2 className="mt-3 text-3xl font-bold text-brand-navy md:text-4xl">Em 3 passos você ganha um especialista de plantão</h2>
+          <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue">
+            Como funciona
+          </span>
+          <h2 className="mt-3 text-3xl font-bold text-brand-navy md:text-4xl">
+            Em 3 passos você ganha um especialista de plantão
+          </h2>
         </div>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {steps.map((s) => (
-            <div key={s.n} className="relative rounded-2xl border border-border bg-card p-7 shadow-sm">
+            <div
+              key={s.n}
+              className="relative rounded-2xl border border-border bg-card p-7 shadow-sm"
+            >
               <span className="text-5xl font-extrabold text-brand-blue/20">{s.n}</span>
               <h3 className="mt-3 text-lg font-semibold text-brand-navy">{s.t}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{s.d}</p>
@@ -256,22 +322,53 @@ function HowItWorks() {
 
 function Features() {
   const features = [
-    { icon: Calculator, t: "Cálculos de folha", d: "Rescisão, férias, 13º, horas extras, INSS, IRRF e adicionais com o passo a passo." },
-    { icon: Scale, t: "CLT e legislação", d: "Respostas embasadas em CLT, instruções normativas e convenções coletivas." },
-    { icon: FileText, t: "eSocial e obrigações", d: "Tira-dúvidas sobre eventos do eSocial, prazos, DCTFWeb e FGTS Digital." },
-    { icon: ShieldCheck, t: "Riscos trabalhistas", d: "Aponta riscos antes de fechar a folha e evita passivos para você e seu cliente." },
-    { icon: BookOpenCheck, t: "Roteiros prontos", d: "Modelos de comunicados, advertências, termos e cartas de aviso." },
-    { icon: MessageCircle, t: "Tudo no WhatsApp", d: "Sem novo app, sem login complicado. Você usa onde já está." },
+    {
+      icon: Calculator,
+      t: "Cálculos de folha",
+      d: "Rescisão, férias, 13º, horas extras, INSS, IRRF e adicionais com o passo a passo.",
+    },
+    {
+      icon: Scale,
+      t: "CLT e legislação",
+      d: "Respostas embasadas em CLT, instruções normativas e convenções coletivas.",
+    },
+    {
+      icon: FileText,
+      t: "eSocial e obrigações",
+      d: "Tira-dúvidas sobre eventos do eSocial, prazos, DCTFWeb e FGTS Digital.",
+    },
+    {
+      icon: ShieldCheck,
+      t: "Riscos trabalhistas",
+      d: "Aponta riscos antes de fechar a folha e evita passivos para você e seu cliente.",
+    },
+    {
+      icon: BookOpenCheck,
+      t: "Roteiros prontos",
+      d: "Modelos de comunicados, advertências, termos e cartas de aviso.",
+    },
+    {
+      icon: MessageCircle,
+      t: "Tudo no WhatsApp",
+      d: "Sem novo app, sem login complicado. Você usa onde já está.",
+    },
   ];
   return (
     <section id="recursos" className="mx-auto max-w-6xl px-6 py-24">
       <div className="mx-auto max-w-2xl text-center">
-        <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue">Recursos</span>
-        <h2 className="mt-3 text-3xl font-bold text-brand-navy md:text-4xl">Um Assessor pronto para tudo que cai na sua mesa</h2>
+        <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue">
+          Recursos
+        </span>
+        <h2 className="mt-3 text-3xl font-bold text-brand-navy md:text-4xl">
+          Um Assessor pronto para tudo que cai na sua mesa
+        </h2>
       </div>
       <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {features.map(({ icon: Icon, t, d }) => (
-          <div key={t} className="group rounded-2xl border border-border bg-card p-6 transition hover:border-brand-blue/40 hover:shadow-brand">
+          <div
+            key={t}
+            className="group rounded-2xl border border-border bg-card p-6 transition hover:border-brand-blue/40 hover:shadow-brand"
+          >
             <div className="grid h-11 w-11 place-items-center rounded-xl bg-accent-gradient text-white">
               <Icon className="h-5 w-5" />
             </div>
@@ -286,20 +383,39 @@ function Features() {
 
 function UseCases() {
   const cases = [
-    { icon: Building2, t: "Escritórios de contabilidade", d: "Padronize as respostas da equipe e atenda mais clientes sem contratar mais analistas." },
-    { icon: HeartHandshake, t: "RH de PMEs", d: "Tenha um especialista de plantão para liberar o RH das dúvidas operacionais do dia." },
-    { icon: Zap, t: "DP público", d: "Apoio para servidores que cuidam de folha em prefeituras, autarquias e órgãos públicos." },
+    {
+      icon: Building2,
+      t: "Escritórios de contabilidade",
+      d: "Padronize as respostas da equipe e atenda mais clientes sem contratar mais analistas.",
+    },
+    {
+      icon: HeartHandshake,
+      t: "RH de PMEs",
+      d: "Tenha um especialista de plantão para liberar o RH das dúvidas operacionais do dia.",
+    },
+    {
+      icon: Zap,
+      t: "DP público",
+      d: "Apoio para servidores que cuidam de folha em prefeituras, autarquias e órgãos públicos.",
+    },
   ];
   return (
     <section className="bg-brand-navy text-white">
       <div className="mx-auto max-w-6xl px-6 py-24">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue">Para quem é</span>
-          <h2 className="mt-3 text-3xl font-bold md:text-4xl">Construído para quem vive o Departamento Pessoal</h2>
+          <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue">
+            Para quem é
+          </span>
+          <h2 className="mt-3 text-3xl font-bold md:text-4xl">
+            Construído para quem vive o Departamento Pessoal
+          </h2>
         </div>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {cases.map(({ icon: Icon, t, d }) => (
-            <div key={t} className="rounded-2xl border border-white/10 bg-white/5 p-7 backdrop-blur">
+            <div
+              key={t}
+              className="rounded-2xl border border-white/10 bg-white/5 p-7 backdrop-blur"
+            >
               <div className="grid h-11 w-11 place-items-center rounded-xl bg-accent-gradient">
                 <Icon className="h-5 w-5 text-white" />
               </div>
@@ -314,20 +430,52 @@ function UseCases() {
 }
 
 const PLANS = [
-  { name: "Individual", cnpjs: 1, price: 97, desc: "Ideal para o profissional autônomo ou empresa única.", highlight: false },
-  { name: "Combo 3 CNPJs", cnpjs: 3, price: 247, desc: "Para escritórios em crescimento.", highlight: true, save: "Economize R$ 44/mês" },
-  { name: "Combo 5 CNPJs", cnpjs: 5, price: 397, desc: "O queridinho das contabilidades.", highlight: false, save: "Economize R$ 88/mês" },
-  { name: "Combo 10 CNPJs", cnpjs: 10, price: 697, desc: "Máxima escala para grandes carteiras.", highlight: false, save: "Economize R$ 273/mês" },
+  {
+    name: "Individual",
+    cnpjs: 1,
+    price: 97,
+    desc: "Ideal para o profissional autônomo ou empresa única.",
+    highlight: false,
+  },
+  {
+    name: "Combo 3 CNPJs",
+    cnpjs: 3,
+    price: 247,
+    desc: "Para escritórios em crescimento.",
+    highlight: true,
+    save: "Economize R$ 44/mês",
+  },
+  {
+    name: "Combo 5 CNPJs",
+    cnpjs: 5,
+    price: 397,
+    desc: "O queridinho das contabilidades.",
+    highlight: false,
+    save: "Economize R$ 88/mês",
+  },
+  {
+    name: "Combo 10 CNPJs",
+    cnpjs: 10,
+    price: 697,
+    desc: "Máxima escala para grandes carteiras.",
+    highlight: false,
+    save: "Economize R$ 273/mês",
+  },
 ];
 
 function Pricing() {
   return (
     <section id="planos" className="mx-auto max-w-6xl px-6 py-24">
       <div className="mx-auto max-w-2xl text-center">
-        <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue">Planos</span>
-        <h2 className="mt-3 text-3xl font-bold text-brand-navy md:text-4xl">Escolha pelo número de CNPJs que você atende</h2>
+        <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue">
+          Planos
+        </span>
+        <h2 className="mt-3 text-3xl font-bold text-brand-navy md:text-4xl">
+          Escolha pelo número de CNPJs que você atende
+        </h2>
         <p className="mt-4 text-muted-foreground">
-          Assinatura mensal recorrente. Cancele quando quiser. Cada plano libera o uso simultâneo para o número de CNPJs contratado.
+          Assinatura mensal recorrente. Cancele quando quiser. Cada plano libera o uso simultâneo
+          para o número de CNPJs contratado.
         </p>
       </div>
 
@@ -357,7 +505,12 @@ function Pricing() {
             {p.save && <p className="mt-1 text-xs font-semibold text-brand-blue">{p.save}</p>}
 
             <ul className="mt-6 space-y-2.5 text-sm text-foreground">
-              <Feat>Uso para <b>{p.cnpjs} CNPJ{p.cnpjs > 1 ? "s" : ""}</b></Feat>
+              <Feat>
+                Uso para{" "}
+                <b>
+                  {p.cnpjs} CNPJ{p.cnpjs > 1 ? "s" : ""}
+                </b>
+              </Feat>
               <Feat>Consultas ilimitadas via WhatsApp</Feat>
               <Feat>Cálculos de folha e rescisão</Feat>
               <Feat>Suporte a eSocial e legislação</Feat>
@@ -381,7 +534,8 @@ function Pricing() {
       </div>
 
       <p className="mx-auto mt-8 max-w-2xl text-center text-xs text-muted-foreground">
-        Cada CNPJ deve ser previamente cadastrado. Não é permitido analisar CNPJs fora do plano contratado. O acesso é mantido enquanto a assinatura estiver ativa.
+        Cada CNPJ deve ser previamente cadastrado. Não é permitido analisar CNPJs fora do plano
+        contratado. O acesso é mantido enquanto a assinatura estiver ativa.
       </p>
     </section>
   );
@@ -400,19 +554,41 @@ function Feat({ children }: { children: React.ReactNode }) {
 
 function Faq() {
   const faqs = [
-    { q: "Como funciona o atendimento via WhatsApp?", a: "Após a assinatura, você recebe o número oficial do Assessor do RH e já pode mandar perguntas, anexos e pedir cálculos. A IA responde em segundos, 24 horas por dia." },
-    { q: "Posso usar o mesmo plano para mais de um CNPJ?", a: "Só dentro do limite contratado. Cada CNPJ é previamente cadastrado e o uso para empresas fora do plano não é permitido. Para mais CNPJs, basta migrar para um combo maior." },
-    { q: "O Assessor substitui meu analista de DP?", a: "Não. Ele é um copiloto: acelera consultas, conferências e cálculos, padroniza respostas da equipe e reduz o risco de erros — mas a decisão final segue com você." },
-    { q: "As informações estão atualizadas com a legislação?", a: "Sim. Mantemos a base de conhecimento atualizada com CLT, instruções normativas, eSocial e mudanças relevantes para o DP." },
-    { q: "Posso cancelar quando quiser?", a: "Sim. A assinatura é mensal e pode ser cancelada a qualquer momento. Em caso de cancelamento ou inadimplência, o acesso é bloqueado." },
-    { q: "Servidores públicos podem usar?", a: "Sim. O Assessor do RH atende DP do setor privado e também servidores que cuidam de folha em prefeituras, autarquias e órgãos públicos." },
+    {
+      q: "Como funciona o atendimento via WhatsApp?",
+      a: "Após a assinatura, você recebe o número oficial do Assessor do RH e já pode mandar perguntas, anexos e pedir cálculos. A IA responde em segundos, 24 horas por dia.",
+    },
+    {
+      q: "Posso usar o mesmo plano para mais de um CNPJ?",
+      a: "Só dentro do limite contratado. Cada CNPJ é previamente cadastrado e o uso para empresas fora do plano não é permitido. Para mais CNPJs, basta migrar para um combo maior.",
+    },
+    {
+      q: "O Assessor substitui meu analista de DP?",
+      a: "Não. Ele é um copiloto: acelera consultas, conferências e cálculos, padroniza respostas da equipe e reduz o risco de erros — mas a decisão final segue com você.",
+    },
+    {
+      q: "As informações estão atualizadas com a legislação?",
+      a: "Sim. Mantemos a base de conhecimento atualizada com CLT, instruções normativas, eSocial e mudanças relevantes para o DP.",
+    },
+    {
+      q: "Posso cancelar quando quiser?",
+      a: "Sim. A assinatura é mensal e pode ser cancelada a qualquer momento. Em caso de cancelamento ou inadimplência, o acesso é bloqueado.",
+    },
+    {
+      q: "Servidores públicos podem usar?",
+      a: "Sim. O Assessor do RH atende DP do setor privado e também servidores que cuidam de folha em prefeituras, autarquias e órgãos públicos.",
+    },
   ];
   return (
     <section id="faq" className="bg-secondary/50 py-24">
       <div className="mx-auto max-w-3xl px-6">
         <div className="text-center">
-          <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue">Dúvidas frequentes</span>
-          <h2 className="mt-3 text-3xl font-bold text-brand-navy md:text-4xl">Tudo o que você precisa saber</h2>
+          <span className="text-xs font-semibold uppercase tracking-widest text-brand-blue">
+            Dúvidas frequentes
+          </span>
+          <h2 className="mt-3 text-3xl font-bold text-brand-navy md:text-4xl">
+            Tudo o que você precisa saber
+          </h2>
         </div>
         <div className="mt-10 divide-y divide-border overflow-hidden rounded-2xl border border-border bg-card">
           {faqs.map((f) => (
@@ -436,13 +612,22 @@ function FinalCta() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-24">
       <div className="relative overflow-hidden rounded-3xl bg-brand-navy p-10 text-white shadow-brand md:p-16">
-        <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-accent-gradient opacity-30 blur-3xl" aria-hidden />
-        <div className="absolute -bottom-32 -left-10 h-72 w-72 rounded-full bg-accent-gradient opacity-20 blur-3xl" aria-hidden />
+        <div
+          className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-accent-gradient opacity-30 blur-3xl"
+          aria-hidden
+        />
+        <div
+          className="absolute -bottom-32 -left-10 h-72 w-72 rounded-full bg-accent-gradient opacity-20 blur-3xl"
+          aria-hidden
+        />
         <div className="relative grid items-center gap-8 md:grid-cols-[1.4fr,1fr]">
           <div>
-            <h2 className="text-3xl font-bold md:text-4xl">Comece hoje a economizar horas todas as semanas</h2>
+            <h2 className="text-3xl font-bold md:text-4xl">
+              Comece hoje a economizar horas todas as semanas
+            </h2>
             <p className="mt-4 max-w-xl text-white/75">
-              Assine o Assessor do RH e descubra como é ter um especialista de DP respondendo na hora — direto no WhatsApp que você já usa.
+              Assine o Assessor do RH e descubra como é ter um especialista de DP respondendo na
+              hora — direto no WhatsApp que você já usa.
             </p>
           </div>
           <div className="flex flex-col gap-3 md:items-end">
@@ -474,7 +659,9 @@ function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-6 py-10 md:flex-row md:items-center">
         <div>
           <Logo className="h-8" />
-          <p className="mt-3 text-xs text-muted-foreground">IA para gestão de pessoas — feita para quem entende de DP.</p>
+          <p className="mt-3 text-xs text-muted-foreground">
+            IA para gestão de pessoas — feita para quem entende de DP.
+          </p>
         </div>
         <div className="flex flex-col gap-1 text-xs text-muted-foreground md:items-end">
           <span>© {new Date().getFullYear()} Assessor do RH. Todos os direitos reservados.</span>
