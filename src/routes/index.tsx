@@ -444,6 +444,8 @@ function UseCases() {
   );
 }
 
+const INDIVIDUAL_PRICE = 39.9;
+
 const PLANS = [
   {
     name: "Individual",
@@ -458,7 +460,6 @@ const PLANS = [
     price: "99,90",
     desc: "Para escritórios em crescimento.",
     highlight: true,
-    save: "Economize R$ 44/mês",
   },
   {
     name: "Combo 5 CNPJs",
@@ -466,7 +467,6 @@ const PLANS = [
     price: "149,90",
     desc: "O queridinho das contabilidades.",
     highlight: false,
-    save: "Economize R$ 88/mês",
   },
   {
     name: "Combo 10 CNPJs",
@@ -474,9 +474,17 @@ const PLANS = [
     price: "299,90",
     desc: "Máxima escala para grandes carteiras.",
     highlight: false,
-    save: "Economize R$ 273/mês",
   },
-];
+].map((plan) => {
+  const comboPrice = parseFloat(plan.price.replace(",", "."));
+  const fullPrice = INDIVIDUAL_PRICE * plan.cnpjs;
+  const savings = fullPrice - comboPrice;
+
+  return {
+    ...plan,
+    save: plan.cnpjs > 1 ? `Economize R$ ${savings.toFixed(2).replace(".", ",")}/mês` : undefined,
+  };
+});
 
 function Pricing() {
   return (
