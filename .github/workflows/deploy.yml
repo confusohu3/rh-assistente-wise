@@ -23,16 +23,17 @@ jobs:
           npm install
           npm run build
 
-      - name: Sincronizar via FTPS
+      - name: Sincronizar via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
+          port: 21
           security: loose
-          local-dir: ./.output/public/   # ← era ./dist/
-          server-dir: public_html/    
+          local-dir: ./.output/public/
+          server-dir: public_html/
           exclude: |
             **/.git*
             **/.git*/**
