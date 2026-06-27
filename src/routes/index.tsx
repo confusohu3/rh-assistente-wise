@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import logoAsset from "@/assets/logo.png.asset.json";
 import {
   MessageCircle,
   Clock,
@@ -17,26 +16,6 @@ import {
 
 import LogoImage from "../assets/logo.png";
 import LogoWhatsApp from "../assets/logo-1.png";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Assessor do RH — IA de DP e Folha no WhatsApp" },
-      {
-        name: "description",
-        content:
-          "Consultas ilimitadas de Departamento Pessoal, folha e legislação trabalhista diretamente no WhatsApp. Planos a partir de R$ 97/mês.",
-      },
-      { property: "og:title", content: "Assessor do RH — IA para gestão de pessoas" },
-      {
-        property: "og:description",
-        content:
-          "IA especialista em DP, folha e eSocial no seu WhatsApp. Para contabilidades e profissionais de RH.",
-      },
-    ],
-  }),
-  component: Index,
-});
 
 const WHATSAPP_URL =
   "https://wa.me/5511999999999?text=" +
@@ -70,6 +49,10 @@ function Index() {
     </div>
   );
 }
+
+export const Route = createFileRoute("/")({
+  component: Index,
+});
 
 function Header() {
   return (

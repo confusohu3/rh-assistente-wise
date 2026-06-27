@@ -1,15 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import {
-  Outlet,
-  Link,
-  createRootRouteWithContext,
-  useRouter,
-  HeadContent,
-  Scripts,
-} from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { Outlet, Link, createRootRouteWithContext, useRouter } from "@tanstack/react-router";
+import { useEffect } from "react";
 
-import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -73,103 +65,16 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Assessor do RH — IA para DP e Folha de Pagamento no WhatsApp" },
-      {
-        name: "description",
-        content:
-          "IA especialista em Departamento Pessoal e folha de pagamento, direto no seu WhatsApp. Tire dúvidas trabalhistas, confira cálculos e ganhe tempo.",
-      },
-      { name: "author", content: "Assessor do RH" },
-      {
-        property: "og:title",
-        content: "Assessor do RH — IA para DP e Folha de Pagamento no WhatsApp",
-      },
-      {
-        property: "og:description",
-        content:
-          "IA especialista em Departamento Pessoal e folha de pagamento, direto no seu WhatsApp. Tire dúvidas trabalhistas, confira cálculos e ganhe tempo.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      {
-        name: "twitter:title",
-        content: "Assessor do RH — IA para DP e Folha de Pagamento no WhatsApp",
-      },
-      {
-        name: "twitter:description",
-        content:
-          "IA especialista em Departamento Pessoal e folha de pagamento, direto no seu WhatsApp. Tire dúvidas trabalhistas, confira cálculos e ganhe tempo.",
-      },
-      {
-        property: "og:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4fe9aebe-7645-4da5-b087-fb61bdd84668/id-preview-51537801--734087a0-ad05-4a90-9e07-e46819acc7cb.lovable.app-1782459534075.png",
-      },
-      {
-        name: "twitter:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4fe9aebe-7645-4da5-b087-fb61bdd84668/id-preview-51537801--734087a0-ad05-4a90-9e07-e46819acc7cb.lovable.app-1782459534075.png",
-      },
-    ],
-    links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap",
-      },
-    ],
-    scripts: [
-      {
-        children: `
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '2109372359646781');
-      fbq('track', 'PageView');
-              `,
-      },
-    ],
-  }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
-
-function RootShell({ children }: { children: ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>
   );
