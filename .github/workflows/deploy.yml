@@ -6,7 +6,7 @@ on:
 
 jobs:
   web-deploy:
-    name: Build e Deploy FTP
+    name: Build e Deploy SFTP
     runs-on: ubuntu-latest
     steps:
       - name: Baixar o código
@@ -22,17 +22,13 @@ jobs:
           npm install
           npm run build
 
-      - name: Sincronizar via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Sincronizar via SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          port: 21
-          local-dir: ./dist/
-          server-dir: public_html/
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
+          port: 22
+          local_path: ./dist/*
+          remote_path: /public_html/
+          sftp_only: true
