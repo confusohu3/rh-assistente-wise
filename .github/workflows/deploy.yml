@@ -31,7 +31,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           security: loose
-          local-dir: ./dist/
+          local-dir: ./.output/public/   # ← era ./dist/
           server-dir: public_html/    
           exclude: |
             **/.git*
