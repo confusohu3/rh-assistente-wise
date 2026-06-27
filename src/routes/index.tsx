@@ -453,6 +453,7 @@ const PLANS = [
     price: "39,90",
     desc: "Ideal para o profissional autônomo ou empresa única.",
     highlight: false,
+    link: "https://app.abacatepay.com/pay/bill_xkG5mPBXe40AjU6MpkPSe4eS",
   },
   {
     name: "Combo 3 CNPJs",
@@ -460,6 +461,7 @@ const PLANS = [
     price: "99,90",
     desc: "Para escritórios em crescimento.",
     highlight: true,
+    link: "https://app.abacatepay.com/pay/bill_1HhrmfZtsk4fPQWqtMFrM4ZA",
   },
   {
     name: "Combo 5 CNPJs",
@@ -467,6 +469,7 @@ const PLANS = [
     price: "149,90",
     desc: "O queridinho das contabilidades.",
     highlight: false,
+    link: "https://app.abacatepay.com/pay/bill_Wu4dHxJadSjqC2NNsfqxWJk2",
   },
   {
     name: "Combo 10 CNPJs",
@@ -474,6 +477,7 @@ const PLANS = [
     price: "299,90",
     desc: "Máxima escala para grandes carteiras.",
     highlight: false,
+    link: "https://app.abacatepay.com/pay/bill_QpTMBUjaML5FgLUpxaTgeT6c",
   },
 ].map((plan) => {
   const comboPrice = parseFloat(plan.price.replace(",", "."));
@@ -541,7 +545,7 @@ function Pricing() {
             </ul>
 
             <a
-              href={WHATSAPP_URL}
+              href={p.link}
               target="_blank"
               rel="noreferrer"
               className={`mt-8 inline-flex items-center justify-center rounded-full px-5 py-3 text-lg font-semibold transition ${
