@@ -20,7 +20,7 @@ jobs:
 
       - name: Instalar dependências e Gerar Build
         run: |
-          npm ci
+          npm install
           npm run build
 
       - name: Sincronizar via FTPS
