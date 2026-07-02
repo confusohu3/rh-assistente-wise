@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState, useEffect } from "react";
 import {
   MessageCircle,
   Clock,
@@ -12,6 +13,7 @@ import {
   Zap,
   HeartHandshake,
   BookOpenCheck,
+  ArrowUp,
 } from "lucide-react";
 
 import LogoImage from "../assets/logo.png";
@@ -32,6 +34,33 @@ function Logo({ className = "" }: { className?: string }) {
   );
 }
 
+function ScrollToTop() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 400);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Removemos o 'if (!visible) return null;' para podermos animar a entrada e saída
+
+  return (
+    <button
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      aria-label="Voltar ao topo"
+      className={`
+        fixed bottom-6 right-6 z-50 grid h-15 w-15 place-items-center rounded-full text-white bg-[#369BFF] cursor-pointer
+        transition-all duration-300 ease-out hover:scale-110 
+        shadow-[0_0_20px_4px_rgba(54,155,255,0.7)] hover:shadow-[0_0_40px_8px_rgba(54,155,255,1)]
+        ${visible ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-12 pointer-events-none"}
+      `}
+    >
+      <ArrowUp className="h-6 w-6" />
+    </button>
+  );
+}
+
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -46,6 +75,7 @@ function Index() {
       <Faq />
       <FinalCta />
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
